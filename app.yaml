@@ -1,0 +1,48 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: dist/web-application/index.html
+  upload: dist/web-application/index.html
+
+- url: /
+  static_dir: dist/web-application
+
+
+# # runtime: python39
+
+# # entrypoint: gunicorn -b :$PORT main:app
+
+# # env_variables:
+# #   CLOUD_STORAGE_BUCKET_NAME: stldigital-openai-bucket
+
+# # handlers:
+# #   - url: /
+# #     static_files: dist/web-application/index.html
+# #     upload: dist/web-application/index.html
+
+# #   - url: /
+# #     static_dir: dist/web-application
+
+
+# runtime: python27
+# api_version: 1
+# threadsafe: true
+# handlers:
+#   - url: /
+#     static_files: dist/[project-name]/index.html
+#     upload: dist/[project-name]/index.html
+#   - url: /
+#     static_dir: dist/[project-name]
+# skip_files:
+#   - e2e/
+#   - node_modules/
+#   - src/
+#   - coverage
+#   - ^(.*/)?\..*$
+#   - ^(.*/)?.*\.json$
+#   - ^(.*/)?.*\.md$
+#   - ^(.*/)?.*\.yaml$
+#   - ^LICENSE
