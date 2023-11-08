@@ -1,13 +1,29 @@
-runtime: python39
+# runtime: python39
 
-entrypoint: gunicorn -b :$PORT main:app
+# # entrypoint: gunicorn -b :$PORT main:app
 
-env_variables:
-  CLOUD_STORAGE_BUCKET_NAME: stldigital-openai-bucket
+# env_variables:
+#   CLOUD_STORAGE_BUCKET_NAME: stldigital-openai-bucket
+
+# handlers:
+# # - url: /assets
+# #   static_dir: dist/web-application/assets
+
+# - url: /
+#   static_files: dist/web-application/index.html
+#   upload: dist/web-application/index.html
+
+
+
+runtime: python27
+api_version: 1
+threadsafe: true
 
 handlers:
-
-
 - url: /
-  static_files: /index.html
-  upload: /index.html
+  static_files: dist/index.html
+  upload: dist/index.html
+
+- url: /(.*)
+  static_files: dist/\1
+  upload: dist/(.*)
