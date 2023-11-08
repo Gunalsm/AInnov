@@ -4,11 +4,11 @@ threadsafe: true
 
 handlers:
 - url: /
-  static_files: dist/web-application/index.html
-  upload: dist/web-application/index.html
+  static_files: /index.html
+  upload: /index.html
 
 - url: /
-  static_dir: dist/web-application
+  static_dir: app
 
 
 # # runtime: python39
