@@ -1,0 +1,207 @@
+<div class="navbar navbar-default">
+  <div class="navbar-header" style="display: flex; align-items: center;">
+      <button><img src="assets/logo.png" width="200" /></button>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+      <li><button class="navbar-button sign-in-button">Sign in</button></li>
+      <li><button class="navbar-button register-button">Register</button></li>
+      <li><button><img src="assets/Search.png" width="17" /></button>
+  </ul>
+  <button class="navbar-menu-icon" id="menuIcon" (click)="toggleMenu()">☰</button>
+
+
+  <div class="navbar-menu" id="menuItems" [class.show]="isMenuOpen">
+      <!-- Responsive menu items -->
+      <a class="menu-item" href="#">Sign in</a>
+      <a class="menu-item" href="#">Register</a> <!-- Corrected line -->
+      <a class="menu-item" href="#">Search</a>
+  </div>
+</div>
+
+
+<div class="body">
+  <div>
+      <h1 style="text-align: center; color: white; font-family: 'adobe-clean', sans-serif; font-size: 20px;">Lorem ipsum
+          dolor sit amet,</h1>
+      <p style="text-align: center; color: white; font-family: 'adobe-clean', sans-serif; font-size: 20px; margin: 0;">gravida
+          mattis quam, viverra varius lorem</p>
+  </div>
+
+
+  <div id="app">
+      <form>
+        <br />
+      
+        <textarea
+          [(ngModel)]="question"
+          name="prompt"
+          rows="1"
+          cols="1"
+          placeholder="Talk to Bard in English or Kannada"
+          style="font-size: 12px; font-family: 'adobe-clean', sans-serif; color: black; margin-top: 5px;"
+        ></textarea>
+        <!-- <button (click)="sendMessage()">Send</button> -->
+        <button type="submit" (click)="sendMessage()">
+          <img src="assets/send.svg" alt="Send" /> <!-- Use the send icon button -->
+        </button>
+      </form>
+     
+      <p style="text-align: center; margin-bottom: 30px;">
+          <span style="color: white; font-family: 'adobe-clean', sans-serif; font-size: 10px; padding:0;">Bard may display
+              inaccurate or offensive information that doesn't represent STL views.</span>
+          <span style="color: white; width: 20px; font-family: 'adobe-clean', sans-serif; font-size: 10px; font-weight: bold; margin: 0;"> Bard Privacy Notice</span>
+      </p>
+
+
+      <button class="view-button" style="font-family: 'adobe-clean', sans-serif; font-size: 17px;">Enrich the Knowledge
+          with</button>
+      <p style="text-align: center; color: white; font-family: 'adobe-clean', sans-serif; font-size: 12px; margin: 0;">Kaggle
+          Other sources</p>
+      <br>
+      <br>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div>
+  <h1 style="color:#360076; margin-left: 60px; margin-bottom: 0; font-family: 'adobe-clean', sans-serif;font-size:25px;">Lorem ipsum dolor sit amet,</h1>
+</div>
+<div>
+  <h1 style="margin-left: 60px ;font-family: 'adobe-clean', sans-serif;font-size:25px;font-weight: 500;">gravida mattis quam, viverra varius lorem</h1>
+</div>
+
+<div id="chat_container">
+  <div *ngIf="loading; else chatContent" class="loading-indicator">
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+  </div>
+  <ng-template #chatContent>
+    <div style="margin-left: 70px;">
+      <div *ngFor="let message of chatMessages; let first = first" class="chat-message" [ngClass]="{'message-gap': !message.isUserMessage}">
+        <div [ngClass]="{'user-message': message.isUserMessage, 'bot-message': !message.isUserMessage}">
+          <ng-container *ngIf="first">
+            <span class="bullet-dot">&#8226;</span>
+            <span class="thumbs-up" (click)="handleThumbsUpClick(message)">&#128077;</span>
+            <span class="thumbs-down" (click)="handleThumbsDownClick(message)">&#128078;</span>
+            <span class="thumbs-up-count">{{ thumbsUpCount }}</span>
+            <span class="thumbs-down-count">{{ thumbsDownCount }}</span>
+          </ng-container>
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+<!-- <div id="chat_container">
+  <div *ngIf="loading; else chatContent" class="loading-indicator">
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+  </div>
+  <ng-template #chatContent>
+    <div style="margin-left: 70px;">
+      <div *ngFor="let message of chatMessages; let first = first" class="chat-message" [ngClass]="{'message-gap': !message.isUserMessage}">
+        <div [ngClass]="{'user-message': message.isUserMessage, 'bot-message': !message.isUserMessage}">
+          <ng-container *ngIf="first">
+            <span class="bullet-dot">&#8226;</span>
+          </ng-container>
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div> -->
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<br>
+<div>
+  <div>
+      <button><img src="assets/FeedBack.png" alt="send" width="200" style="margin-left: 10px;" /></button>
+  </div>
+</div>
+
+<!-- </div> -->
+
+
+
+
+
+ <!-- <form>
+          <br><button><img src="assets/Photo.png" /></button>
+          <textarea name="prompt" rows="1" cols="1" placeholder="Talk to Bard in English or Kannada"
+              style="font-size: 12px; font-family: 'adobe-clean', sans-serif; color: black; margin-top: 5px;"></textarea>
+          <button><img src="assets/Voice.png" alt="send" /></button>
+      </form> -->
+
+<!-- <div id="chat_container">
+  <div *ngIf="loading; else chatContent" class="loading-indicator">
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+    <span class="loading-dots"></span>
+  </div>
+  <ng-template #chatContent>
+    <div style="margin-left: 70px;">
+      <div *ngFor="let message of chatMessages" class="chat-message">
+        <div [ngClass]="{'user-message': message.isUserMessage, 'bot-message': !message.isUserMessage}">
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div> -->
+
+
+
+<!-- <div id="chat_container">
+<div style="margin-left: 100px;">
+  <div *ngFor="let message of chatMessages" class="chat-message">
+    <div [ngClass]="{'user-message': message.isUserMessage, 'bot-message': !message.isUserMessage}">
+      {{ message.text }}
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+<!-- 
+<div class="Guna">
+<div>
+  <h1 style="color:#360076; margin-left: 10px; margin-bottom: 0; font-family: 'adobe-clean', sans-serif;font-size:25px;">Lorem ipsum dolor sit amet,</h1>
+</div>
+<div>
+  <h1 style="margin-left: 10px ;font-family: 'adobe-clean', sans-serif;font-size:25px;font-weight: 500;">gravida mattis quam, viverra varius lorem</h1>
+</div>
+<div>
+  <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida mattis quam, viverra varius<br> lorem scelerisque id. Praesent in magna sed Leo eleifend ultrices. Integer pretium porttitor velit,<br> a consectetur velit rhoncus et. Morbi sed massa bibendum, pulvinar tortor vel, egestas elit.<br> Donec at quam Leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per<br> inceptos himenaeos. Nam in molestie nunc.</p>
+  </div>
+  <div class="container_2">
+      <p>Etiam non viverra ante, et bibendum enim. Interdum</p>
+      <p>Malesuada fames ac ante ipsum primis in faucibus. Mauris</p>
+      <p>Malesuada risus at arcu luctus, sit amet dignissim nibh varius.</p>
+      <p>Scelerisque erat eu placerat venenatis. Proin in nibh eu ante</p>
+  </div>
+</div>
+<br>
+<br>
+<div>
+  <img src="assets/Mask_Group_4.png" alt="New Image" width="400" style="margin-left: 10px;" />
+</div>
+<br>
+<br> -->

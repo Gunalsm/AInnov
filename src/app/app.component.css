@@ -1,0 +1,311 @@
+
+
+.body {
+    background-image: url('../assets/BackGround.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+}
+
+.navbar-button {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+}
+
+
+
+form {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    border-radius: 50px;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.sign-in-button {
+    background-color: white;
+    color: purple;
+    font-family: 'adobe-clean', sans-serif;
+}
+
+.register-button {
+    background-color: #360076;
+    color: white;
+    font-family: 'adobe-clean', sans-serif;
+}
+
+.view-button {
+    background: transparent linear-gradient(109deg, #EB0EA8 0%, #1B003B 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    display: block;
+    margin: 20px auto;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+ul.nav.navbar-nav.navbar-right li {
+    margin-left: 10px;
+}
+
+.navbar {
+    background-color: #130450;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-header h1 {
+    font-size: 24px;
+    color: white;
+}
+.guna {
+    font-size: 25px;
+}
+.container {
+    text-align: left;
+    font: normal normal medium 30px/50px Montserrat;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.747);
+    opacity: 1;
+    font-family: 'adobe-clean', sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.container_2 {
+    text-align: left;
+    font: normal normal medium 30px/50px Montserrat;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.747);
+    opacity: 1;
+    font-family: 'adobe-clean', sans-serif;
+    font-weight: bold;
+}
+
+.container_2 p::before {
+    content: "• ";
+    color: #2A003C;
+    margin-right: 5px;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+textarea {
+    width: 100%;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    background: transparent;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    width: calc(100% - 60px);
+    overflow: hidden;
+    scrollbar-width: none;
+    resize: none;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+form img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0; /* Position to the right of the button */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.navbar-menu-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+.navbar-menu.show {
+    display: flex;
+}
+.navbar-menu-button {
+    display: none; /* Hide the menu button in the original screen */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* Set the color to white */
+}
+
+.loading-indicator {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .loading-dots {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #000;
+    border-radius: 50%;
+    animation: loading-dot 1s infinite steps(2, start) alternate;
+  }
+  
+  .message-gap {
+    margin-bottom: 10px; /* Adjust the margin as needed to create the desired line gap */
+  }
+  .bullet-dot {
+    font-size: 20px; /* Increase the font size to make the bullet dot larger */
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
+  
+  @keyframes loading-dot {
+    0%, 100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.0);
+    }
+  }
+  
+/* .loading-indicator {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .loading-dots {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #000;
+    border-radius: 50%;
+    animation: loading 1s infinite;
+    margin: 0 0.2em;
+  }
+  
+  @keyframes loading {
+    0%, 20% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.0);
+    }
+  } */
+  
+
+.navbar-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 100%; /* Position it below the menu icon */
+    left: 0; /* Align with the left side of the icon */
+    background-color: #ffffff; /* Background color for the dropdown */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    z-index: 1000; /* Ensure the dropdown is above other content */
+  }
+  
+.menu-item:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on button click */
+.navbar-dropdown:hover .navbar-menu,
+.navbar-menu-button:hover + .navbar-menu {
+    display: block;
+}
+
+/* Your existing CSS code */
+
+/* Add this media query to show the menu button */
+@media (max-width: 768px) {
+    .navbar-header h1 {
+        font-size: 20px;
+    }
+
+    .navbar-menu-icon {
+        display: block; /* Display the menu icon in the responsive design */
+    }
+    .guna {
+        font-size: 3px;
+    }
+
+    .navbar-button, ul.nav.navbar-nav.navbar-right {
+        display: none; /* Hide buttons and right-aligned navigation in the responsive design */
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+}
+
